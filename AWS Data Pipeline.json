@@ -1,0 +1,68 @@
+{
+  "objects": [
+    {
+      "schedule": {
+        "ref": "DefaultSchedule"
+      },
+      "filePath": "s3://interndestinationbucket/data",
+      "name": "DefaultDataNode2",
+      "id": "DataNodeId_u3HDM",
+      "type": "S3DataNode"
+    },
+    {
+      "output": {
+        "ref": "DataNodeId_u3HDM"
+      },
+      "input": {
+        "ref": "DataNodeId_601HK"
+      },
+      "schedule": {
+        "ref": "DefaultSchedule"
+      },
+      "name": "DefaultCopyActivity1",
+      "runsOn": {
+        "ref": "ResourceId_VtFyg"
+      },
+      "id": "CopyActivityId_22zdi",
+      "type": "CopyActivity"
+    },
+    {
+      "schedule": {
+        "ref": "DefaultSchedule"
+      },
+      "resourceRole": "DataPipelineDefaultResourceRole",
+      "role": "DataPipelineDefaultRole",
+      "name": "DefaultResource1",
+      "id": "ResourceId_VtFyg",
+      "type": "Ec2Resource"
+    },
+    {
+      "failureAndRerunMode": "CASCADE",
+      "schedule": {
+        "ref": "DefaultSchedule"
+      },
+      "resourceRole": "DataPipelineDefaultResourceRole",
+      "role": "DataPipelineDefaultRole",
+      "scheduleType": "cron",
+      "name": "Default",
+      "id": "Default"
+    },
+    {
+      "period": "1 days",
+      "startDateTime": "2021-11-23T10:39:00",
+      "name": "Every 1 day",
+      "id": "DefaultSchedule",
+      "type": "Schedule"
+    },
+    {
+      "schedule": {
+        "ref": "DefaultSchedule"
+      },
+      "filePath": "s3://internsourcebucket/data",
+      "name": "DefaultDataNode1",
+      "id": "DataNodeId_601HK",
+      "type": "S3DataNode"
+    }
+  ],
+  "parameters": []
+}
