@@ -32,7 +32,7 @@ with DAG(dag_id='copy-s3-file',
          )
     
          transform_file = PythonOperator(
-           task_id='trnasform_file',
+           task_id='transform_file',
            python_callable=transform_file_fn
          )
       
